@@ -5,7 +5,7 @@ st.tilte("Stop Game")
 
 if st.button("Game Start"):
   num = rd.random()
-    if num < 0.1:
-      st.error("STOP")
-    else:
-      st.success("PASS")
+  if num < 0.1:
+    st.error("STOP")
+  else:
+    st.success("PASS")
