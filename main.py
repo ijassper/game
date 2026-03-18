@@ -1,11 +1,11 @@
 import random as rd
 import streamlit as st
 
-st.tilte("Stop Game")
+st.title("멈추기 게임")
 
 if st.button("Game Start"):
   num = rd.random()
   if num < 0.1:
-    st.error("STOP")
+    st.error("멈춰!!")
   else:
-    st.success("PASS")
+    st.success("통과!!")
