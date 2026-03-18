@@ -5,7 +5,7 @@ import streamlit as st
 page_bg_color = """
 <style>
 [data-testid="stAppViewContainer"]{
-background-color: #f0f8ff;
+background-color: #87CEFF;
 }
 """
 st.markdown(page_bg_color, unsafe_allow_html=True)
