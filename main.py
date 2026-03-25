@@ -26,6 +26,7 @@ def set_background(main_bg):
 # 배경 이미지 함수 호출
 set_background('bg_spongebob.jpg')
 
+"""
 # CSS 코들을 이용해 배경색 설정
 page_bg_color = """
 <style>
@@ -33,6 +34,8 @@ page_bg_color = """
 background-color: #87CEFF;
 }
 """
+"""
+
 st.markdown(page_bg_color, unsafe_allow_html=True)
 st.title("멈추기 게임")
 
