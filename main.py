@@ -39,7 +39,20 @@ st.title("멈추기 게임")
 col1, col2, col3 = st.columns([1,2,1])
 
 with col2:
-  st.image("bg_spongebob.jpg", use_column_width=True)
+  st.markdown(
+      f"""
+      <style>
+      div.stButton > button:first-child {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+      </style>
+      """,
+      unsafe_allow_html=True
+    )
+  
+  st.image("bg_spongebob.jpg")
 
   if st.button(""):
     num = rd.random()
