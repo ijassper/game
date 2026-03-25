@@ -3,23 +3,25 @@ import streamlit as st
 import base64
 
 def set_background(main_bg):
-  with open(main_bg,"rb") as f:
-    data = f.read()
-  b64 = base64.b64encode(data).decode()
-
-  st.markdown(
-    f"""
-    <style>
-    [data-testid="stAppViewContainer"] {{
-      background: url(data:image/jpeg;base64,{b64});
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-      background-position: center;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-  )
+  if 'bg_set' not in st.session_state:
+    with open(main_bg,"rb") as f:
+      data = f.read()
+    b64 = base64.b64encode(data).decode()
+  
+    st.markdown(
+      f"""
+      <style>
+      [data-testid="stAppViewContainer"] {{
+        background: url(data:image/jpeg;base64,{b64});
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+      }}
+      </style>
+      """,
+      unsafe_allow_html=True
+    )
+    st.session_state.bg_set = True
 
 # 배경 이미지 함수 호출
 set_background('bg_spongebob.jpg')
