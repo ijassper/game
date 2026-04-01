@@ -26,28 +26,33 @@ def set_background(main_bg):
 # 배경 이미지 함수 호출
 set_background('bg_spongebob.jpg')
 
-st.markdown(page_bg_color, unsafe_allow_html=True)
+#st.markdown(page_bg_color, unsafe_allow_html=True)
 st.title("멈추기 게임")
 
-col1, col2, col3 = st.columns([1,2,1])
-
-with col2:
-  st.markdown(
-      f"""
+# 이미지와 버튼을 겹치기 위한 투명 버튼
+st.markdown(
+      """
       <style>
-      div.stButton > button:first-child {
-        background-color: transparent;
+      .stButton > button {
+        width: 300px;
+        height: 300px;
+        background-color: rgba(0,0,0,0) !important;
         border: none;
-        padding: 0;
-    }
+        color: rgba(0,0,0,0);        
+      }
       </style>
       """,
       unsafe_allow_html=True
     )
-  
+
+# 게임영역 3등분
+col1, col2, col3 = st.columns([1, 2, 1])
+
+with col2:
+    
   st.image("bg_spongebob.jpg")
 
-  if st.button(""):
+  if st.button(" "):
     num = rd.random()
     if num < 0.25:
       st.error("멈춰!!")
