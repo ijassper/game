@@ -26,7 +26,7 @@ def set_background(main_bg):
       """,
       unsafe_allow_html=True
     )
-    st.session_state.bg_set = True
+#    st.session_state.bg_set = True
 
 # 배경 이미지 함수 호출
 set_background('bg_spongebob.jpg')
