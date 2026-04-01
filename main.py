@@ -39,7 +39,7 @@ col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
 #  with open("bg_spongebob.jpg","rb") as f:
 #    img_data = base64.b64encode(f.read()).decode()
-  st.image("bg_spongebob.jpg", use_column_with=True)
+  st.image("bg_spongebob.jpg")
 
 #  if st.button(f'<img src="data:image/jpeg;base64,{img_data}" width="300">', use_container_with=True):
   if st.button("게임시작"):
