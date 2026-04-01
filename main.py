@@ -3,18 +3,23 @@ import streamlit as st
 import base64
 
 def set_background(main_bg):
-  if 'bg_set' not in st.session_state:
-    with open(main_bg,"rb") as f:
-      data = f.read()
-    b64 = base64.b64encode(data).decode()
+  #if 'bg_set' not in st.session_state:
+  with open(main_bg,"rb") as f:
+    data = f.read()
+  b64 = base64.b64encode(data).decode()
   
-    st.markdown(
+  st.markdown(
       f"""
       <style>
       [data-testid="stAppViewContainer"] {{
         background: url(data:image/jpeg;base64,{b64});
         background-size: 100% 100%;
         background-repeat: no-repeat;
+        background-position: center;
+      }}
+      div.stButton > button {{
+        background-color: transparent !important;
+        border: none !important; 
         background-position: center;
       }}
       </style>
@@ -26,33 +31,17 @@ def set_background(main_bg):
 # 배경 이미지 함수 호출
 set_background('bg_spongebob.jpg')
 
-#st.markdown(page_bg_color, unsafe_allow_html=True)
-st.title("멈추기 게임")
-
-# 이미지와 버튼을 겹치기 위한 투명 버튼
-st.markdown(
-      """
-      <style>
-      .stButton > button {
-        width: 300px;
-        height: 300px;
-        background-color: rgba(0,0,0,0) !important;
-        border: none;
-        color: rgba(0,0,0,0);        
-      }
-      </style>
-      """,
-      unsafe_allow_html=True
-    )
+st.markdown("<h1 style='text-align: center; color: white;'>멈추기게임</h1>", unsafe_allow_html=True)
 
 # 게임영역 3등분
 col1, col2, col3 = st.columns([1, 2, 1])
 
 with col2:
-    
-  st.image("bg_spongebob.jpg")
+  with open("bg_spongebob.jpg","rb") as f:
+    img_data = base64.b64encode(f.read()).decode()
+  
 
-  if st.button(" "):
+  if st.button(f'<img src="data:image/jpeg;base64,{img_data}" width="300">', use_container_with=True):
     num = rd.random()
     if num < 0.25:
       st.error("멈춰!!")
