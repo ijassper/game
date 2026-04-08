@@ -33,7 +33,7 @@ st.markdown("<h1 style='text-align: center; color: white;'>멈추기게임</h1>"
 col1, col2 = st.columns([3, 1])
 
 with col2:
-  with open("spongebob.jpg","rb") as f:
+  with open("sponge.jpg","rb") as f:
     img_data = base64.b64encode(f.read()).decode()
 
 
