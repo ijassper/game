@@ -23,9 +23,7 @@ def set_background(main_bg):
       button[kind="secondary"] {{
             background-image: url(data:image/jpeg;base64,{b64_sponge});
             background-size: cover;
-            width: 150px;
-            height: 150px;
-            
+                      
       }}
       </style>
       """,
