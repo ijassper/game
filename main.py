@@ -11,6 +11,7 @@ def set_background(main_bg):
   st.markdown(
       f"""
       <style>
+      # 배경 이미지 코드
       [data-testid="stAppViewContainer"] {{
         background: url(data:image/jpeg;base64,{b64});
         background-size: 100% 100%;
@@ -18,12 +19,13 @@ def set_background(main_bg):
         background-position: center;
         backgorund-attachment: fixed;
       }}
+      # 버튼에 배경이미지 넣는 코드
       button[kind="secondary"] {{
             background-image: url(data:image/jpeg;base64,{b64_sponge});
             background-size: cover;
             width: 150px;
             height: 150px;
-            border-radius: 50%; /* 둥근 버튼 */
+            
       }}
       </style>
       """,
