@@ -11,7 +11,7 @@ script_path = os.path.join(os.path.dirname(__file__), "robot_arm.py")
 # ngrok 실행 (먼저 pip install pyngrok)
 def start_ngrok():
     from pyngrok import ngrok
-    ngrok.set_auth_token("YOUR_NGROK_AUTHTOKEN")   # ngrok 계정 토큰
+    ngrok.set_auth_token("cr_2xOlVmBBNUgJkY9c1ijPEwdGiKI")   # ngrok 계정 토큰
     tunnel = ngrok.connect(8080, "http")
     return tunnel.public_url
 
